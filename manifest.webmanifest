@@ -1,0 +1,17 @@
+{
+  "id": "./",
+  "name": "Coin Dodge",
+  "short_name": "Coin Dodge",
+  "description": "Catch falling gold coins, dodge red obstacles, and chase your personal best.",
+  "lang": "en",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#101315",
+  "theme_color": "#101315",
+  "categories": ["games", "entertainment"],
+  "icons": [
+    { "src": "./icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
+    { "src": "./icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}
