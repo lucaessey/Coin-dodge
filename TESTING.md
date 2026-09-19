@@ -65,6 +65,15 @@ controlled game time, browser touch emulation, and real Web Audio nodes:
 ## Not performed
 
 Physical phone input, Safari/Firefox execution, actual OS/home-screen installation,
-screen-reader testing, and deployment to a public HTTPS host. Focus/visibility
+screen-reader testing, and real speaker/vibration output. Focus/visibility
 transitions were simulated; touch was browser-emulated. Offline loading and worker
 updates were exercised with real browser service workers and cache storage.
+
+## Public GitHub Pages verification
+
+[Live game](https://lucaessey.github.io/Coin-dodge/), published from `main` at the
+repository root with HTTPS enforced. The GitHub Pages build completed successfully.
+The public HTML matched the tested local file byte-for-byte. On the actual HTTPS
+site, Chromium verified the manifest with no installability errors, correct worker
+scope/activation, settings changes, a timed run with both optional features enabled,
+pause/resume, and offline reload/play at both the directory URL and `index.html`.

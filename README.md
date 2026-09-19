@@ -4,6 +4,9 @@ A standalone arcade PWA built with vanilla HTML, CSS, and JavaScript. All game m
 
 ## Play
 
+**[Play Coin Dodge online](https://lucaessey.github.io/Coin-dodge/)** on your phone,
+tablet, or computer. The site is hosted on GitHub Pages over HTTPS.
+
 Open `index.html` directly, or serve this folder on localhost for PWA features:
 
 ```sh
