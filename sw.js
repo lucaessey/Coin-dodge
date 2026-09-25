@@ -2,7 +2,7 @@
 
 // Bump VERSION whenever an essential asset changes. A new worker waits until every
 // old game tab closes: no skipWaiting, forced reload, or interruption of a live run.
-const VERSION = 'v7';
+const VERSION = 'v8';
 const CACHE_PREFIX = `coin-dodge:${self.registration.scope}:`;
 const CACHE_NAME = CACHE_PREFIX + VERSION;
 const ESSENTIAL_ASSETS = [

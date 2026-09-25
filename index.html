@@ -452,6 +452,7 @@
         <label class="visual-choice"><input type="radio" name="skin" data-setting="skin" value="monster"><canvas class="skin-preview" data-skin="monster" width="160" height="90" aria-hidden="true"></canvas><strong>Little Monster</strong></label>
         <label class="visual-choice"><input type="radio" name="skin" data-setting="skin" value="robot"><canvas class="skin-preview" data-skin="robot" width="160" height="90" aria-hidden="true"></canvas><strong>Robot</strong></label>
         <label class="visual-choice"><input type="radio" name="skin" data-setting="skin" value="cat"><canvas class="skin-preview" data-skin="cat" width="160" height="90" aria-hidden="true"></canvas><strong>Cat Basket</strong></label>
+        <label class="visual-choice"><input type="radio" name="skin" data-setting="skin" value="potato"><canvas class="skin-preview" data-skin="potato" width="160" height="90" aria-hidden="true"></canvas><strong>Potato</strong></label>
       </div></fieldset>
       <p class="section-note">Same movement, same collision area. Just a different look.</p>
     </section>
@@ -515,7 +516,7 @@
     };
     const POWER_TYPES = ['magnet', 'shield', 'slow'];
     const POWER_COLORS = { magnet: '#87e6ff', shield: '#b2bcff', slow: '#e2acff' };
-    const SKIN_NAMES = { bucket: 'Original Bucket', ship: 'Spaceship', chest: 'Treasure Chest', monster: 'Little Monster', robot: 'Robot', cat: 'Cat Basket' };
+    const SKIN_NAMES = { bucket: 'Original Bucket', ship: 'Spaceship', chest: 'Treasure Chest', monster: 'Little Monster', robot: 'Robot', cat: 'Cat Basket', potato: 'Potato' };
     const ENUM_SETTINGS = { mode: ['classic', 'timed'], difficulty: ['easy', 'normal', 'hard'], theme: Object.keys(THEMES), skin: Object.keys(SKIN_NAMES), controls: ['buttons', 'drag'], buttonSize: ['small', 'medium', 'large'] };
     const BOOLEAN_SETTINGS = ['powerUps', 'coinRush', 'music', 'sfx', 'vibration', 'particles', 'screenShake', 'reducedMotion'];
     const NEXT_RUN_SETTINGS = ['mode', 'powerUps', 'coinRush'];
@@ -1239,6 +1240,26 @@
         box(0,17,8,15,3,'#8198b6'); box(64,17,8,15,3,'#8198b6');
         box(7,8,58,28,5,'#b7c8dc','#effaff'); box(15,14,42,10,3,'#253c59');
         box(22,17,7,4,1,accent); box(43,17,7,4,1,accent); box(26,29,20,3,1,'#647892');
+      } else if (skin === 'potato') {
+        const peel = ctx.createLinearGradient(0, 0, 15, 36);
+        peel.addColorStop(0, '#e6bc83'); peel.addColorStop(.55, '#bf874e'); peel.addColorStop(1, '#916036');
+        ctx.beginPath(); ctx.moveTo(17, 3);
+        ctx.bezierCurveTo(29, -1, 39, 5, 51, 2);
+        ctx.bezierCurveTo(65, 0, 71, 11, 70, 20);
+        ctx.bezierCurveTo(69, 31, 58, 36, 46, 34);
+        ctx.bezierCurveTo(34, 32, 26, 37, 15, 33);
+        ctx.bezierCurveTo(0, 30, -3, 11, 17, 3);
+        ctx.closePath(); ctx.fillStyle = peel; ctx.fill();
+        ctx.strokeStyle = '#f2cc96'; ctx.lineWidth = 1.3; ctx.stroke();
+        // Small dimples and a friendly face stay inside the shared player bounds.
+        for (const [px, py, radius] of [[15,10,1.5],[8,21,1],[18,29,1.4],[37,8,1],[56,10,1.6],[63,22,1.2],[53,29,1]]) {
+          circle(px, py, radius, '#8b5d37'); circle(px - .4, py - .5, radius * .4, '#efc992');
+        }
+        circle(26, 18, 3, '#35291e'); circle(46, 18, 3, '#35291e');
+        circle(25.3, 17, .9, '#fff4d9'); circle(45.3, 17, .9, '#fff4d9');
+        circle(20, 24, 2.2, '#d79070'); circle(52, 24, 2.2, '#d79070');
+        ctx.strokeStyle = '#543624'; ctx.lineWidth = 1.8; ctx.lineCap = 'round';
+        ctx.beginPath(); ctx.moveTo(31, 24); ctx.quadraticCurveTo(36, 30, 41, 24); ctx.stroke();
       } else if (skin === 'cat') {
         shape([[5,13],[6,0],[23,10]],'#e0bb8f','#f6ddbe'); shape([[49,10],[66,0],[67,13]],'#e0bb8f','#f6ddbe');
         shape([[10,10],[10,4],[17,10]],'#ec9192'); shape([[55,10],[62,4],[62,10]],'#ec9192');

@@ -77,3 +77,12 @@ The public HTML matched the tested local file byte-for-byte. On the actual HTTPS
 site, Chromium verified the manifest with no installability errors, correct worker
 scope/activation, settings changes, a timed run with both optional features enabled,
 pause/resume, and offline reload/play at both the directory URL and `index.html`.
+
+## Potato skin update — September 25, 2026
+
+Verified the new Potato choice in Appearance settings with desktop Chrome and
+emulated mobile touch, including portrait and landscape layouts. Selection and
+the accessible player label survive reload, and the skin works with all four
+themes and offline. Its 72×36 hitbox, movement, +10 coin collection, and one-heart
+obstacle penalty are unchanged. Visually inspected the desktop/mobile previews;
+no uncaught browser errors. Physical phone testing was not performed.
